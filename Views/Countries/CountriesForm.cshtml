@@ -1,0 +1,31 @@
+﻿@model European_Immigration.ViewModels.CountryFormViewModel
+
+@{
+    ViewBag.Title = "Add/Edit a country";
+}
+
+    <h2>Add/Edit a country</h2>
+
+@using (Html.BeginForm("Save", "Countries"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors!")
+    <div class="form-group">
+        @Html.LabelFor(c => c.Country.CountryName)
+        @Html.TextBoxFor(c => c.Country.CountryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Country.CountryName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Country.Flag)
+        @Html.TextBoxFor(c => c.Country.Flag, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Country.Capital)
+        @Html.TextBoxFor(c => c.Country.Capital, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Country.Population)
+        @Html.TextBoxFor(c => c.Country.Population, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Country.Population)
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}

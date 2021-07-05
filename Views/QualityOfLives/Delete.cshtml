@@ -1,0 +1,112 @@
+﻿@model European_Immigration.Models.QualityOfLife
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Quality Of Life</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QualityOfLifeIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QualityOfLifeIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasingPowerIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasingPowerIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.safetyIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.safetyIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.healthcareIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.healthcareIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costOfLivingIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costOfLivingIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.propertyPriceToIncomeRatio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.propertyPriceToIncomeRatio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trafficCommuteTimeIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trafficCommuteTimeIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pollutionIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pollutionIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.climateIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.climateIndex)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

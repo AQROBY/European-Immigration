@@ -1,0 +1,81 @@
+﻿@model IEnumerable<European_Immigration.Models.QualityOfLife>
+@{
+    ViewBag.Title = "Quality Of Life";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quality of Life</h2>
+@{
+    if (User.IsInRole("Admin"))
+    {
+        <p>
+            @Html.ActionLink("New Data", "New", "QualityOfLives", null, new { @class = "btn btn-primary" })
+        </p>
+    }
+}
+@if (!Model.Any())
+{
+    <p>We don't have any data yet.</p>
+}
+else
+{
+    <table id="qualitys" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Flag</th>
+                <th>Country</th>
+                <th>Quality Of Life Index</th>
+                <th>Purchasing Power Index</th>
+                <th>Safety Index</th>
+                <th>Healthcare Index</th>
+                <th>Cost Of Living Index</th>
+                <th>Property Price To Income Ratio</th>
+                <th>Traffic Commute Time Index</th>
+                <th>Pollution Index</th>
+                <th>Climate Index</th>
+                @{
+                    if (User.IsInRole("Admin"))
+                    {
+                        <th>Update / Delete</th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var quality in Model)
+            {
+            <tr>
+                <td><a href="@Url.Action("Details", "QualityOfLives", new { CountryName = quality.CountryName })"><img src="@Url.Content(quality.Flag)"<a /></td>
+                <td>@Html.ActionLink(quality.CountryName, "Details", "QualityOfLives", new { countryName = quality.CountryName }, null)</td>
+                <td>@(quality.QualityOfLifeIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.PurchasingPowerIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.safetyIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.healthcareIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.costOfLivingIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.propertyPriceToIncomeRatio?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.trafficCommuteTimeIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.pollutionIndex?.ToString("#.##") ?? "0")</td>
+                <td>@(quality.climateIndex?.ToString("#.##") ?? "0")</td>
+                @{
+                    if (User.IsInRole("Admin"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { CountryName = quality.CountryName }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil" }),
+                            @Html.ActionLink("Delete", "Delete", new { CountryName = quality.CountryName }, htmlAttributes: new { @class = "glyphicon glyphicon-remove" })
+                        </td>
+                    }
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#qualitys").DataTable();
+        });
+    </script>
+}

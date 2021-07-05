@@ -1,0 +1,88 @@
+﻿@model European_Immigration.Models.PoliticsAndEconomics
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Politics And Economics</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RuleOfLawIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuleOfLawIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoliticalStabilityIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoliticalStabilityIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorruptionIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorruptionIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateFragilityIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateFragilityIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EconomicGrowth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EconomicGrowth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GdpPerCapita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GdpPerCapita)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,128 @@
+﻿body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+.field-validation-error {
+	color:red;
+}
+
+.input-validation-error {
+	border: 2px solid red;
+}
+
+.validation-summary-errors{
+	color:red;
+	font-weight: bold;
+}
+
+body {
+	padding-top: 90px;
+}
+
+.table-country thead {
+	font-size: 120%;
+}
+
+#countryName {
+	text-decoration: underline;
+	color: white;
+	text-align: center !important;
+	border-color: #454d55
+}
+
+.table-country tr:hover td {
+	background: gray;
+}
+
+img {
+	width: 90px;
+}
+
+#flag {
+	width: 17%;
+	float: left;
+	padding-left: 1%;
+	height: auto;
+}
+
+.table-country {
+	color: #fff;
+	background-color: #343a40;
+}
+
+#country {
+	width: 24%;
+	float: left;
+	margin-left: 3%;
+}
+
+#quality {
+	width: 24%;
+	float: left;
+	margin-left: 3%;
+}
+
+#taxes {
+	width: 24%;
+	float: left;
+	margin-left: 3%;
+}
+
+#politics {
+	width: 24%;
+	float: left;
+	margin-left: 3%;
+}
+
+#health {
+	width: 40%;
+	float: left;
+	margin-left: 20%;
+	margin-top: -5%;
+}
+
+#generals {
+	width: 98%;
+	margin-left: 2%;
+}
+
+#qualitys {
+	width: 97%;
+	margin-left: 1%;
+}
+
+#taxess {
+	width: 98%;
+	margin-left: 2%;
+}
+
+#politicss {
+	width: 98%;
+	margin-left: 2%;
+}
+
+#healths {
+	width: 98%;
+	margin-left: 2%;
+}

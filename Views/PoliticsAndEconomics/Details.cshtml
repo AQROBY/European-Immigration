@@ -1,0 +1,90 @@
+﻿@model European_Immigration.Models.PoliticsAndEconomics
+@{
+    ViewBag.Title = Model.CountryName;
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+
+    <body background="\images\@Model.CountryName.ToLower()Img.jpg">
+        <h2 id="countryName">@Model.CountryName</h2>
+        <img id="flag" src="@Url.Content(Model.Flag)" alt="Image" />
+        <table id="country" class="table table-bordered table-hover table-country">
+            <thead>
+                <tr>
+                    <th>General</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Capital: @Model.Country.Capital</td></tr>
+                <tr><td>Population: @(Model.Country.Population?.ToString("#,##0") ?? "0")</td></tr>
+                <tr><td>Cost of living: @Model.Country.GeneralData.CostOfLiving</td></tr>
+                <tr><td>Rent Index: @Model.Country.GeneralData.RentIndex</td></tr>
+                <tr><td>Cost of Living Plus Rent Index: @Model.Country.GeneralData.CostOfLivingPlusRentIndex</td></tr>
+                <tr><td>Groceries Index: @Model.Country.GeneralData.GroceriesIndex</td></tr>
+                <tr><td>Tax Rate(Income): @Model.Country.GeneralData.TaxRateIncome</td></tr>
+                <tr><td>Local Purchasing Power Index: @Model.Country.GeneralData.LocalPurchasingPowerIndex</td></tr>
+                <tr><td>Safety Index: @Model.Country.GeneralData.SafetyIndex</td></tr>
+            </tbody>
+        </table>
+
+        <table id="quality" class="table table-bordered table-hover table-country">
+            <thead>
+                <tr>
+                    <th>Quality Of Life</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Quality of Life Index: @Model.Country.QualityOfLife.QualityOfLifeIndex</td></tr>
+                <tr><td>Purchasing Power Index: @Model.Country.QualityOfLife.PurchasingPowerIndex</td></tr>
+                <tr><td>Safety Index: @Model.Country.QualityOfLife.safetyIndex</td></tr>
+                <tr><td>Healthcare Index: @Model.Country.QualityOfLife.healthcareIndex</td></tr>
+                <tr><td>Cost of Living Index: @Model.Country.QualityOfLife.costOfLivingIndex</td></tr>
+                <tr><td>Property Price to Income Ratio: @Model.Country.QualityOfLife.propertyPriceToIncomeRatio</td></tr>
+                <tr><td>Traffic Commute Time Index: @Model.Country.QualityOfLife.trafficCommuteTimeIndex</td></tr>
+                <tr><td>Pollution Index: @Model.Country.QualityOfLife.pollutionIndex</td></tr>
+                <tr><td>Climate Index: @Model.Country.QualityOfLife.climateIndex</td></tr>
+            </tbody>
+        </table>
+
+        <table id="taxes" class="table table-bordered table-hover table-country">
+            <thead>
+                <tr>
+                    <th>Taxes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Corporate Tax: @Model.Country.Taxes.CorporateTax</td></tr>
+                <tr><td>Income Tax: @Model.Country.Taxes.IncomeTax</td></tr>
+                <tr><td>VAT: @Model.Country.Taxes.Vat</td></tr>
+            </tbody>
+        </table>
+
+        <table id="politics" class="table table-bordered table-hover table-country">
+            <thead>
+                <tr>
+                    <th>Politics And Economics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Rule of Law Index: @Model.Country.PoliticsAndEconomics.RuleOfLawIndex</td></tr>
+                <tr><td>Political Stability Index: @Model.Country.PoliticsAndEconomics.PoliticalStabilityIndex</td></tr>
+                <tr><td>Corruption Index: @Model.Country.PoliticsAndEconomics.CorruptionIndex</td></tr>
+                <tr><td>State Fragility Index: @Model.Country.PoliticsAndEconomics.StateFragilityIndex</td></tr>
+                <tr><td>Economic Growth: @Model.Country.PoliticsAndEconomics.EconomicGrowth</td></tr>
+                <tr><td>GDP per capita: $@Model.Country.PoliticsAndEconomics.GdpPerCapita</td></tr>
+            </tbody>
+        </table>
+
+        <table id="health" class="table table-bordered table-hover table-country">
+            <thead>
+                <tr>
+                    <th>Healthcare and Science</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Healthcare Index: @Model.Country.HealthcareAndScience.HealthcareIndex</td></tr>
+                <tr><td>Life Expectancy: @Model.Country.HealthcareAndScience.LifeExpectancy</td></tr>
+                <tr><td>Scientific Documents - H Index: @Model.Country.HealthcareAndScience.ScientificDocumentsHIndex</td></tr>
+                <tr><td>Human Development Index: @Model.Country.HealthcareAndScience.HumanDevelopmentIndex</td></tr>
+            </tbody>
+        </table>
+    </body>
